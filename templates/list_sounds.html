@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+	<title>Sampler</title>
+</head>
+
+<body>
+	<h1>Sampler du service Info.</h1>
+	<table>
+		<tr>
+			<th colspan='7'>Samples</th>
+		</tr>
+
+		{% set limit = 7 %}
+		{% set cpt = 0 %}
+		{% for value in range(lenSamples) %}
+			{% set cpt = cpt + 1 %}
+
+		
+			{% if cpt <= limit %}
+
+				{% if cpt == 1 %}
+					<tr>
+				{% endif %}
+
+					<td align="left">
+						<form method="post">
+							<input name = "play" value="{{samplesSortedKeys[value]}}" type="hidden"/>
+							<input type="submit" value="{{ samplesSorted[value].split('.')[0] }}">
+							{# Ci dessus, >> .split('.')[0] << est là pour enlever l'extension du fichier à afficher #}
+						</form>
+					</td>
+
+				{% if cpt == limit %}
+					</tr>
+				{% endif %}
+
+			{% else %}
+				{% set cpt = 0 %}
+			{% endif %}
+		{% endfor %}
+			</tr>
+	</table>
+
+	<form method="post">
+		{% if last == '' %}
+		<input type="text" name = "say" placeholder="Tapez votre phrase ici" size="170">
+		<select name="lang">
+			<option value="fr" selected>Français</option>
+			<option value="en">Anglais</option>
+			<option value="de">Allemand</option>
+			<option value="it">Italien</option>
+			<option value="ru">Russe</option>
+			<option value="ja">Japonnais</option>
+		</select>
+		<input type="submit" value="Dire">
+
+		{% else %}
+
+		<input type="text" name = "resay" value = "{{ last }}" size="170">
+		<select name="lang">
+			<option value="fr" selected>Français</option>
+			<option value="en">Anglais</option>
+			<option value="de">Allemand</option>
+			<option value="it">Italien</option>
+			<option value="ru">Russe</option>
+			<option value="ja">Japonnais</option>
+		</select>
+		<input type="submit" value="Re-Dire">
+		{% endif %}
+	</form>
+	<p>WIFI quality: {{wifi}}%.<a href="./memory">RAM</a> / <a href="./disk">Disk</a></p>
+</body>
+</html>
