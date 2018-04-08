@@ -6,10 +6,14 @@ This is a python3 project. flask, psutil, io and gtts modules are required!
 
 To install the dependencies Python modules :
 
-sudo pip3 install flask\n
-sudo pip3 install io\n
-sudo pip3 install gtts\n
-sudo pip3 install psutil\n
+sudo pip3 install flask
+
+sudo pip3 install io
+
+sudo pip3 install gtts
+
+sudo pip3 install psutil
+
 
 Start the sampler :
 
