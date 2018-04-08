@@ -1,6 +1,6 @@
 # sampler
 
-A simple/fun web sampler who play wave files and uses the Google Text To Speech engine.
+A simple/fun web sampler who play wave files and uses the Google Text To Speech engine. Written on a Raspberry Pi. Tested OK with Raspberry Pi A+.
 
 This is a python3 project. flask, psutil, io and gtts modules are required!
 
@@ -17,4 +17,4 @@ sudo pip3 install psutil
 
 Start the sampler :
 
-sudo __init__.py
+Start the script with sudo.
