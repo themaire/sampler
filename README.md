@@ -17,4 +17,4 @@ sudo pip3 install psutil
 
 Start the sampler :
 
-Start the script with sudo.
+Start the script with sudo and connect at http://your_machine_ip/.
